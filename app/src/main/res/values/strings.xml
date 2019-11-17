@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Motorport</string>
     <string name="title_activity_maps">Map</string>
+    <string name="label_item_map">Mapa</string>
+    <string name="label_item_trip">Tus Viajes</string>
+    <string name="label_item_workshop">Talleres</string>
+    <string name="label_item_appointment">Tus Citas</string>
+    <string name="content_desc_hamburger">Hamburger Menu</string>
 </resources>

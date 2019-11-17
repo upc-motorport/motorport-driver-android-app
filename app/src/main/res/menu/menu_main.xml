@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_map"
+        android:icon="@drawable/ic_map_24px"
+        android:title="@string/label_item_map" />
+    <item
+        android:id="@+id/item_trip"
+        android:icon="@drawable/ic_trending_up_24px"
+        android:title="@string/label_item_trip" />
+    <item
+        android:id="@+id/item_workshop"
+        android:icon="@drawable/ic_build_24px"
+        android:title="@string/label_item_workshop" />
+    <item
+        android:id="@+id/item_appointment"
+        android:icon="@drawable/ic_date_range_24px"
+        android:title="@string/label_item_appointment" />
+</menu>
