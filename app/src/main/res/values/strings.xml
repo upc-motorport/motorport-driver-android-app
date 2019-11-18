@@ -2,8 +2,17 @@
     <string name="app_name">Motorport</string>
     <string name="title_activity_maps">Map</string>
     <string name="label_item_map">Mapa</string>
-    <string name="label_item_trip">Tus Viajes</string>
+    <string name="label_item_trip">Viajes</string>
     <string name="label_item_workshop">Talleres</string>
-    <string name="label_item_appointment">Tus Citas</string>
-    <string name="content_desc_hamburger">Hamburger Menu</string>
+    <string name="label_item_appointment">Citas</string>
+    <string name="label_item_settings">Cuenta</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_btn_editprofile">Editar Perfil</string>
+    <string name="label_btn_favworkshops">Mecánicos de Confianza</string>
+    <string name="label_btn_payments">Métodos de Pago</string>
+    <string name="label_btn_myvehicles">Mis Vehículos</string>
+    <string name="label_image_user">User Profile Image</string>
+    <string name="label_btn_logout">Cerrar Sesión</string>
 </resources>
