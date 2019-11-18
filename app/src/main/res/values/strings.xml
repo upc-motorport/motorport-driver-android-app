@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Motorport</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_myvehicles">Mis Vehículos</string>
     <string name="label_item_map">Mapa</string>
     <string name="label_item_trip">Viajes</string>
     <string name="label_item_workshop">Talleres</string>
@@ -15,4 +16,8 @@
     <string name="label_btn_myvehicles">Mis Vehículos</string>
     <string name="label_image_user">User Profile Image</string>
     <string name="label_btn_logout">Cerrar Sesión</string>
+    <string name="label_btn_edit">Editar</string>
+    <string name="label_image_moreoptions">Más Opciones</string>
+    <string name="label_field_registrationplate">PLACA:</string>
+    <string name="label_image_vehicle">Foto del vehículo</string>
 </resources>
