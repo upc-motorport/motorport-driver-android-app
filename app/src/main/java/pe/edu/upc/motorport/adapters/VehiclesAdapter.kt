@@ -13,7 +13,6 @@ import pe.edu.upc.motorport.models.Vehicle
 
 class VehiclesAdapter(var vehicles: List<Vehicle>, var context: Context): RecyclerView.Adapter<VehiclesAdapter.VehicleViewHolder>() {
     inner class VehicleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val vehicleCardView = itemView.cvVehicle
         val vehicleImageView = itemView.ivVehicle
         val nameTextView = itemView.tvVehicleName
         val registrationPlateTextView = itemView.tvRegistrationPlate
@@ -25,9 +24,6 @@ class VehiclesAdapter(var vehicles: List<Vehicle>, var context: Context): Recycl
                 .into(vehicleImageView)
             nameTextView.text = "${vehicle.brand?.toUpperCase()} ${vehicle.model?.toUpperCase()}"
             registrationPlateTextView.text = vehicle.registrationPlate!!.toUpperCase()
-            vehicleCardView.setOnClickListener{
-                Toast.makeText(context,"Item clicked",Toast.LENGTH_SHORT).show()
-            }
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VehicleViewHolder {

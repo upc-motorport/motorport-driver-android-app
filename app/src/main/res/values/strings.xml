@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Motorport</string>
+    <string name="title_activity_login">Iniciar Sesión</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_myvehicles">Mis Vehículos</string>
+    <string name="title_activity_addvehicle">Registrar Vehículo</string>
+    <string name="title_activity_editvehicle">Editar Vehículo</string>
     <string name="label_item_map">Mapa</string>
     <string name="label_item_trip">Viajes</string>
     <string name="label_item_workshop">Talleres</string>
@@ -20,4 +23,21 @@
     <string name="label_image_moreoptions">Más Opciones</string>
     <string name="label_field_registrationplate">PLACA:</string>
     <string name="label_image_vehicle">Foto del vehículo</string>
+    <string name="label_btn_changephoto">Cambiar foto</string>
+    <string name="label_hint_vehicletype">Tipo</string>
+    <string name="label_hint_vehiclebrand">Marca</string>
+    <string name="label_hint_vehiclemodel">Modelo</string>
+    <string name="label_hint_registrationplate">Placa</string>
+    <string name="label_text_vehicleformterms">Al registrar un vehículo, todos los usuarios de la suscripción tendrán acceso</string>
+    <string name="label_btn_registervehicle">REGISTRAR</string>
+    <string name="label_btn_createaccount">CREAR CUENTA</string>
+    <string name="label_btn_login">INICIAR SESIÓN</string>
+    <string name="label_hint_email">Correo electrónico</string>
+    <string name="label_hint_password">Contraseña</string>
+    <string name="label_hint_donthaveaccount">No tengo una cuenta</string>
+    <string name="label_hint_forgotpassword">OLVIDASTE TU CONTRASEÑA?</string>
+    <string name="label_btn_loginform">INGRESAR</string>
+    <string name="message_invalid_email">Ingrese un correo válido</string>
+    <string name="message_empty_password">Ingrese contraseña</string>
+    <string name="message_login_error">Correo o clave incorrecta</string>
 </resources>

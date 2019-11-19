@@ -2,6 +2,7 @@ package pe.edu.upc.motorport.controllers.activities
 
 import android.content.AbstractThreadedSyncAdapter
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,6 +31,11 @@ class VehicleActivity : AppCompatActivity() {
         this.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         getVehicles()
         rvVehicles.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+
+        fabAddVehicle.setOnClickListener{
+            val intent = Intent(this,VehicleFormActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getVehicles(){
