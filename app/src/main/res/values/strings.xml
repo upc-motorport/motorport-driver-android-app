@@ -40,4 +40,14 @@
     <string name="message_invalid_email">Ingrese un correo válido</string>
     <string name="message_empty_password">Ingrese contraseña</string>
     <string name="message_login_error">Correo o clave incorrecta</string>
+    <string name="message_empty_vehicletype">Ingrese tipo de vehículo</string>
+    <string name="message_empty_vehiclebrand">Ingrese marca</string>
+    <string name="message_empty_model">Ingrese modelo</string>
+    <string name="message_empty_regplate">Ingrese placa</string>
+    <string name="label_hint_year">Año</string>
+    <string name="label_hint_kilometers">Kilómetros</string>
+    <string name="message_empty_year">Ingrese año</string>
+    <string name="message_empty_kilometers">Ingrese kilómetros</string>
+    <string name="message_onsave_vehicle">Se ha agregado el vehículo satisfactoriamente</string>
+    <string name="message_onupdate_vehicle">Se ha actualizado el vehículo satisfactoriamente</string>
 </resources>

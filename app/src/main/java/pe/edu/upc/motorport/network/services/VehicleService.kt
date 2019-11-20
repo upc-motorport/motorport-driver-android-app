@@ -2,6 +2,7 @@ package pe.edu.upc.motorport.network.services
 
 import pe.edu.upc.motorport.models.Vehicle
 import pe.edu.upc.motorport.network.dto.ResultResponse
+import pe.edu.upc.motorport.network.dto.SaveVehicleRequest
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -13,10 +14,10 @@ interface VehicleService {
     fun findById(@Header("Authorization") authorization: String, @Path("id") id: Int): Call<ResultResponse<Vehicle>>
 
     @POST("vehicles")
-    fun save(@Header("Authorization") authorization: String, @Body vehicle: Vehicle): Call<ResultResponse<Int>>
+    fun save(@Header("Authorization") authorization: String, @Body vehicle: SaveVehicleRequest): Call<ResultResponse<Int>>
 
     @PUT("vehicles/{id}")
-    fun update(@Header("Authorization") authorization: String, @Body vehicle: Vehicle, @Path("id") id: Int): Call<Void>
+    fun update(@Header("Authorization") authorization: String, @Body vehicle: SaveVehicleRequest, @Path("id") id: Int): Call<Void>
 
     @DELETE("vehicles/{id}")
     fun delete(@Header("Authorization") authorization: String, @Path("id") id: Int): Call<Void>

@@ -11,7 +11,7 @@
         android:id="@+id/ivVehicle"
         android:layout_width="@dimen/dimen_image_vehicle"
         android:layout_height="@dimen/dimen_image_vehicle"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/label_image_vehicle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,23 +98,9 @@
             android:id="@+id/tietRegPlate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/label_hint_registrationplate" />
+            android:hint="@string/label_hint_registrationplate"
+            android:inputType="numberSigned" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/tvVehicleFormTerms"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/label_text_vehicleformterms"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tilRegPlate"
-        app:layout_constraintStart_toStartOf="@+id/tilRegPlate"
-        app:layout_constraintTop_toBottomOf="@+id/tilRegPlate" />
 
     <Button
         android:id="@+id/btnRegisterVehicle"
@@ -127,5 +113,44 @@
         android:text="@string/label_btn_registervehicle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvVehicleFormTerms" />
+        app:layout_constraintTop_toBottomOf="@+id/tilKilometers" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilRegPlate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_hint_year"
+            android:inputType="numberSigned" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilKilometers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilYear">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietKilometers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_hint_kilometers"
+            android:inputType="numberSigned" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

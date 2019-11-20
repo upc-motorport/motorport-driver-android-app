@@ -1,14 +1,15 @@
 package pe.edu.upc.motorport.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.card_vehicle.view.*
 import pe.edu.upc.motorport.R
+import pe.edu.upc.motorport.controllers.activities.VehicleFormActivity
 import pe.edu.upc.motorport.models.Vehicle
 
 class VehiclesAdapter(var vehicles: List<Vehicle>, var context: Context): RecyclerView.Adapter<VehiclesAdapter.VehicleViewHolder>() {
@@ -16,6 +17,7 @@ class VehiclesAdapter(var vehicles: List<Vehicle>, var context: Context): Recycl
         val vehicleImageView = itemView.ivVehicle
         val nameTextView = itemView.tvVehicleName
         val registrationPlateTextView = itemView.tvRegistrationPlate
+        val btnEditVehicle = itemView.btnEditVehicle
         fun bindTo(vehicle: Vehicle){
             Picasso
                 .get()
@@ -35,7 +37,13 @@ class VehiclesAdapter(var vehicles: List<Vehicle>, var context: Context): Recycl
     }
 
     override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
-        holder.bindTo(vehicles[position])
+        val vehicle = vehicles[position]
+        holder.bindTo(vehicle)
+        holder.btnEditVehicle.setOnClickListener {
+            val intent = Intent(context,VehicleFormActivity::class.java)
+            intent.putExtra("vehicle",vehicle)
+            context.startActivity(intent)
+        }
     }
 
 }
