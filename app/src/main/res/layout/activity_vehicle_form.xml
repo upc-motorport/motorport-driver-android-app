@@ -98,8 +98,7 @@
             android:id="@+id/tietRegPlate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/label_hint_registrationplate"
-            android:inputType="numberSigned" />
+            android:hint="@string/label_hint_registrationplate" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -131,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_hint_year"
-            android:inputType="numberSigned" />
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

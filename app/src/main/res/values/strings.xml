@@ -50,4 +50,6 @@
     <string name="message_empty_kilometers">Ingrese kilómetros</string>
     <string name="message_onsave_vehicle">Se ha agregado el vehículo satisfactoriamente</string>
     <string name="message_onupdate_vehicle">Se ha actualizado el vehículo satisfactoriamente</string>
+    <string name="label_item_delete">Eliminar</string>
+    <string name="message_ondelete_vehicle">Se ha eliminado el vehículo satisfactoriamente</string>
 </resources>

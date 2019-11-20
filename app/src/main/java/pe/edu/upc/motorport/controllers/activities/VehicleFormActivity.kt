@@ -90,15 +90,8 @@ class VehicleFormActivity : AppCompatActivity() {
             .check()
 
         if(isType && isBrand && isModel && isRegistrationPlate && isYear && isKilometers){
-            var imageUrl: String?
-            var postMethod: Boolean = true
-            if(vehicle == null){
-                imageUrl = null
-            }else{
-                imageUrl = vehicle!!.imageUrl
-                postMethod = false
-            }
-            val requestBody = SaveVehicleRequest(registrationPlate,0,model,brand,type,year.toInt(),kilometers.toInt(),imageUrl!!)
+            var postMethod: Boolean = vehicle == null
+            val requestBody = SaveVehicleRequest(registrationPlate,0,model,brand,type,year.toInt(),kilometers.toInt())
             val retrofit = RetrofitSingleton.instance
             val vehicleService = retrofit.create(VehicleService::class.java)
             val defaultToken = ""

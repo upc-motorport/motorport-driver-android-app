@@ -9,6 +9,5 @@ data class SaveVehicleRequest(
     @SerializedName("brand") val brand: String,
     @SerializedName("type") val type: String,
     @SerializedName("year") val year: Int,
-    @SerializedName("kilometers") val kilometers: Int,
-    @SerializedName("imageUrl") val imageUrl: String
+    @SerializedName("kilometers") val kilometers: Int
 )
