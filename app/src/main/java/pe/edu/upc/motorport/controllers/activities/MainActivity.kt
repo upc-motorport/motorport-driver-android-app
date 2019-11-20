@@ -1,71 +1,46 @@
 package pe.edu.upc.motorport.controllers.activities
 
-import android.content.pm.PackageManager
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 import pe.edu.upc.motorport.R
+import pe.edu.upc.motorport.controllers.fragments.MapFragment
+import pe.edu.upc.motorport.controllers.fragments.AccountFragment
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class MainActivity : AppCompatActivity(){
 
-    private lateinit var map: GoogleMap
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private lateinit var lastLocation: Location
-
-    companion object {
-        private const val LOCATION_PERMISSION_REQUEST_CODE = 1
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        navigateTo(item)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        val navView: BottomNavigationView = bnvMain
+
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        navigateTo(navView.menu.findItem(R.id.item_map))
     }
 
-    override fun onMarkerClick(p0: Marker?) = false
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        map = googleMap
-        map.getUiSettings().isZoomControlsEnabled = true
-        map.setOnMarkerClickListener(this)
-        setUpMap()
-        map.isMyLocationEnabled = true
-        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
-            }
+    private fun getFragmentFor(item: MenuItem): Fragment {
+        return when(item.itemId) {
+            R.id.item_map -> MapFragment()
+            R.id.item_account -> AccountFragment()
+            else -> MapFragment()
         }
     }
 
-    private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-                MainActivity.LOCATION_PERMISSION_REQUEST_CODE
-            )
-            return
-        }
+    private fun navigateTo(item: MenuItem): Boolean {
+        item.isChecked = true
+
+        return supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.content, getFragmentFor(item))
+            .commit() > 0
     }
 
-    private fun placeMarkerOnMap(location: LatLng) {
-        val markerOptions = MarkerOptions().position(location)
-        map.addMarker(markerOptions)
-    }
 }
