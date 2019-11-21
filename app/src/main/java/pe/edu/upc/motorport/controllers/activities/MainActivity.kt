@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(){
         return when(item.itemId) {
             R.id.item_map -> MapFragment()
             R.id.item_account -> AccountFragment()
-            else -> MapFragment()
+            else -> AccountFragment()
         }
     }
 
