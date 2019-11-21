@@ -3,4 +3,6 @@
     <dimen name="hamburger_size">32dp</dimen>
     <dimen name="margin_sm">8dp</dimen>
     <dimen name="dimen_image_vehicle">96dp</dimen>
+    <dimen name="dimen_image_workshop">96dp</dimen>
+    <dimen name="dimen_large_image_workshop">160dp</dimen>
 </resources>

@@ -45,7 +45,10 @@ class VehicleActivity : AppCompatActivity() {
     private fun getVehicles(){
         val retrofit = RetrofitSingleton.instance
         val vehicleService = retrofit.create(VehicleService::class.java)
-        val retrofitCall = vehicleService.findAll("Bearer ${MotorportConfig.MOTORPORT_TOKEN}")
+        val defaultToken = ""
+        val token = sharedPreferences.getString(MotorportConfig.SHARED_PREFERENCES_FIELD_TOKEN,defaultToken)
+        val authorizationHeader = "Bearer $token"
+        val retrofitCall = vehicleService.findAll(authorizationHeader)
 
         retrofitCall.enqueue(object: Callback<ResultResponse<List<Vehicle>>>{
             override fun onFailure(call: Call<ResultResponse<List<Vehicle>>>, t: Throwable) {

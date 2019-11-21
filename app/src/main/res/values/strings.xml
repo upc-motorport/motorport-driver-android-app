@@ -52,4 +52,16 @@
     <string name="message_onupdate_vehicle">Se ha actualizado el vehículo satisfactoriamente</string>
     <string name="label_item_delete">Eliminar</string>
     <string name="message_ondelete_vehicle">Se ha eliminado el vehículo satisfactoriamente</string>
+    <string name="label_image_workshop">Foto del taller mecánico</string>
+    <string name="label_imgbtn_moreoptions">Más Opciones</string>
+    <string name="label_btn_mechworkshop_details">Ver</string>
+    <string name="title_activity_mechanicalworkshop">Detalle de taller mecánico</string>
+    <string name="label_btn_appointment">RESERVAR CITA</string>
+    <string name="label_btn_workshop_services">SERVICIOS</string>
+    <string name="label_btn_addtofavorites">AÑADIR A MECÁNICOS DE CONFIANZA</string>
+    <string name="label_text_workshopname">Nombre:</string>
+    <string name="label_text_workshopcountry">País:</string>
+    <string name="label_text_workshopdepartment">Departamento:</string>
+    <string name="label_text_workshopcity">Ciudad:</string>
+    <string name="label_text_workshopaddress">Dirección:</string>
 </resources>

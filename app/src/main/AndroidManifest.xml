@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.activities.LoginActivity"></activity>
+        <activity android:name=".controllers.activities.MechanicalWorkshopActivity"></activity>
+        <activity android:name=".controllers.activities.LoginActivity" />
         <activity android:name=".controllers.activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,7 @@
         <activity android:name=".controllers.activities.VehicleActivity" />
         <activity
             android:name=".controllers.activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
