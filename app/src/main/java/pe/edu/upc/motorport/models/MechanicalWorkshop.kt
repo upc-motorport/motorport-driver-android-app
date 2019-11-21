@@ -4,9 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 @Entity(tableName = "mechanical_workshops")
-class MechanicalWorkshop {
+class MechanicalWorkshop: Serializable {
     @PrimaryKey
     @SerializedName("id")
     var id: Int? = null
@@ -53,4 +54,7 @@ class MechanicalWorkshop {
     @ColumnInfo(name="longitude")
     @SerializedName("longitude")
     var longitude: Double? = null
+
+    @ColumnInfo(name="is_favorite")
+    var isFavorite: Boolean = false
 }
