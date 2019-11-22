@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_account.*
 
 import pe.edu.upc.motorport.R
+import pe.edu.upc.motorport.controllers.activities.FavoriteWorkshopsActivity
 import pe.edu.upc.motorport.controllers.activities.HomeActivity
 import pe.edu.upc.motorport.controllers.activities.VehicleActivity
 import pe.edu.upc.motorport.util.MotorportConfig
@@ -43,6 +44,11 @@ class AccountFragment : Fragment() {
             val intent = Intent(context,HomeActivity::class.java)
             startActivity(intent)
             activity!!.finish()
+        }
+
+        btnFavWorkshops.setOnClickListener {
+            val intent = Intent(context,FavoriteWorkshopsActivity::class.java)
+            startActivity(intent)
         }
     }
 }

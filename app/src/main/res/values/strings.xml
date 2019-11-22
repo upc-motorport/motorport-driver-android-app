@@ -64,4 +64,6 @@
     <string name="label_text_workshopdepartment">Departamento:</string>
     <string name="label_text_workshopcity">Ciudad:</string>
     <string name="label_text_workshopaddress">Dirección:</string>
+    <string name="label_imgbtn_favorite">Botón de añadir a favoritos</string>
+    <string name="title_activity_favoriteworkshops">Mecánicos de confianza</string>
 </resources>

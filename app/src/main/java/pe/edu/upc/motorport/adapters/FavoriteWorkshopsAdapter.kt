@@ -15,7 +15,8 @@ import pe.edu.upc.motorport.models.MechanicalWorkshop
 import pe.edu.upc.motorport.persistence.AppDatabase
 import pe.edu.upc.motorport.util.MotorportConfig
 
-class MechanicalWorkshopsAdapter(private var workshops: ArrayList<MechanicalWorkshop>, val context:Context): RecyclerView.Adapter<MechanicalWorkshopsAdapter.MechanicalWorkshopViewHolder>() {
+class FavoriteWorkshopsAdapter(private val workshops: ArrayList<MechanicalWorkshop>, val context: Context): RecyclerView.Adapter<FavoriteWorkshopsAdapter.MechanicalWorkshopViewHolder>() {
+
     inner class MechanicalWorkshopViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val ivMechanicalWorkshop = itemView.ivMechanicalWorkshop
         private val nameTextView = itemView.tvMechWorkshopName
@@ -30,6 +31,7 @@ class MechanicalWorkshopsAdapter(private var workshops: ArrayList<MechanicalWork
             addressTextView.text = "${workshop.city},${workshop.department}"
         }
     }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -44,33 +46,20 @@ class MechanicalWorkshopsAdapter(private var workshops: ArrayList<MechanicalWork
     override fun onBindViewHolder(holder: MechanicalWorkshopViewHolder, position: Int) {
         val workshop = workshops[position]
         holder.bindTo(workshop)
-        workshop.isFavorite = AppDatabase
-            .getInstance(context)
-            .getMechanicalWorkshopDao()
-            .findById(workshop.id!!)
-            .isNotEmpty()
         holder.itemView.ibFavorite.setImageResource(MotorportConfig.getResourceForFavoriteImageButton(workshop.isFavorite))
-
-        holder.itemView.cvMechanicalWorkshop.setOnClickListener{
-            val intent = Intent(context,MechanicalWorkshopActivity::class.java)
+        holder.itemView.cvMechanicalWorkshop.setOnClickListener {
+            val intent = Intent(context, MechanicalWorkshopActivity::class.java)
             intent.putExtra("workshop",workshop)
             context.startActivity(intent)
         }
         holder.itemView.ibFavorite.setOnClickListener {
-            if(workshop.isFavorite){
-                AppDatabase
-                    .getInstance(context)
-                    .getMechanicalWorkshopDao()
-                    .delete(workshop)
-            }else{
-                workshop.isFavorite = true
-                AppDatabase
-                    .getInstance(context)
-                    .getMechanicalWorkshopDao()
-                    .save(workshop)
-                Toast.makeText(context,"${workshop.name} agregado a mecánicos de confianza",Toast.LENGTH_SHORT).show()
-            }
-            notifyItemChanged(position)
+            AppDatabase
+                .getInstance(context)
+                .getMechanicalWorkshopDao()
+                .delete(workshop)
+            workshops.removeAt(position)
+            notifyItemRemoved(position)
+            Toast.makeText(context,"${workshop.name} eliminado de mecánicos de confianza", Toast.LENGTH_SHORT).show()
         }
     }
 }

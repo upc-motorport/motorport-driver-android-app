@@ -40,7 +40,8 @@ class VehiclesAdapter(var vehicles: ArrayList<Vehicle>, var context: Context): R
     override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
         val vehicle = vehicles[position]
         holder.bindTo(vehicle)
-        holder.itemView.btnEditVehicle.setOnClickListener {
+
+        holder.itemView.cvVehicle.setOnClickListener {
             val intent = Intent(context,VehicleFormActivity::class.java)
             intent.putExtra("vehicle",vehicle)
             context.startActivity(intent)

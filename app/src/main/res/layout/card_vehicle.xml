@@ -52,22 +52,14 @@
 
         <TextView
             android:id="@+id/tvRegistrationPlate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/roboto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvRegPlateLabel"
+            app:layout_constraintEnd_toEndOf="@+id/tvVehicleName"
             app:layout_constraintStart_toEndOf="@+id/tvRegPlateLabel"
-            app:layout_constraintTop_toTopOf="@+id/tvRegPlateLabel"
             tools:text="ABC123" />
-
-        <Button
-            android:id="@+id/btnEditVehicle"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_btn_edit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageButton
             android:id="@+id/ibtnMoreOptions"
