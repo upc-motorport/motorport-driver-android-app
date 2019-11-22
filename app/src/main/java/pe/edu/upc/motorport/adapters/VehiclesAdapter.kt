@@ -16,9 +16,9 @@ import pe.edu.upc.motorport.models.Vehicle
 
 class VehiclesAdapter(var vehicles: ArrayList<Vehicle>, var context: Context): RecyclerView.Adapter<VehiclesAdapter.VehicleViewHolder>() {
     inner class VehicleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val vehicleImageView = itemView.ivVehicle
-        val nameTextView = itemView.tvVehicleName
-        val registrationPlateTextView = itemView.tvRegistrationPlate
+        private val vehicleImageView = itemView.ivVehicle
+        private val nameTextView = itemView.tvVehicleName
+        private val registrationPlateTextView = itemView.tvRegistrationPlate
         fun bindTo(vehicle: Vehicle){
             Picasso
                 .get()
@@ -40,7 +40,8 @@ class VehiclesAdapter(var vehicles: ArrayList<Vehicle>, var context: Context): R
     override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
         val vehicle = vehicles[position]
         holder.bindTo(vehicle)
-        holder.itemView.btnEditVehicle.setOnClickListener {
+
+        holder.itemView.cvVehicle.setOnClickListener {
             val intent = Intent(context,VehicleFormActivity::class.java)
             intent.putExtra("vehicle",vehicle)
             context.startActivity(intent)

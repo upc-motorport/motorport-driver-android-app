@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import pe.edu.upc.motorport.R
 import pe.edu.upc.motorport.controllers.fragments.MapFragment
 import pe.edu.upc.motorport.controllers.fragments.AccountFragment
+import pe.edu.upc.motorport.controllers.fragments.MechanicalWorkshopsFragment
 
 class MainActivity : AppCompatActivity(){
 
@@ -19,9 +20,7 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val navView: BottomNavigationView = bnvMain
-
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         navigateTo(navView.menu.findItem(R.id.item_map))
     }
@@ -30,7 +29,8 @@ class MainActivity : AppCompatActivity(){
         return when(item.itemId) {
             R.id.item_map -> MapFragment()
             R.id.item_account -> AccountFragment()
-            else -> MapFragment()
+            R.id.item_workshop -> MechanicalWorkshopsFragment()
+            else -> Fragment()
         }
     }
 

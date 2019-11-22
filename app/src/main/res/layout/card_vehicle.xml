@@ -28,11 +28,13 @@
 
         <TextView
             android:id="@+id/tvVehicleName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/roboto_medium"
+            app:layout_constraintEnd_toStartOf="@+id/ibtnMoreOptions"
             app:layout_constraintStart_toEndOf="@+id/ivVehicle"
             app:layout_constraintTop_toTopOf="@+id/ivVehicle"
             tools:text="CHEVROLET CAMARO" />
@@ -50,31 +52,19 @@
 
         <TextView
             android:id="@+id/tvRegistrationPlate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/roboto"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvRegPlateLabel"
+            app:layout_constraintEnd_toEndOf="@+id/tvVehicleName"
             app:layout_constraintStart_toEndOf="@+id/tvRegPlateLabel"
-            app:layout_constraintTop_toTopOf="@+id/tvRegPlateLabel"
             tools:text="ABC123" />
-
-        <Button
-            android:id="@+id/btnEditVehicle"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_btn_edit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageButton
             android:id="@+id/ibtnMoreOptions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/white"
-            android:contentDescription="@string/label_image_moreoptions"
+            style="@style/style_imgbutton_moreoptions"
+            android:contentDescription="@string/label_imgbtn_moreoptions"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_more_vert_24px" />

@@ -11,4 +11,13 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="style_imgbutton_moreoptions">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:contentDescription">@string/label_image_moreoptions</item>
+    </style>
 </resources>
